@@ -1,0 +1,56 @@
+[System]
+Name='deprem'
+Type='mamdani'
+Version=2.0
+NumInputs=4
+NumOutputs=1
+NumRules=0
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Bina Yaşı'
+Range=[0 100]
+NumMFs=4
+MF1='Az':'trimf',[-10 0 10]
+MF2='Orta':'trimf',[6 13 20]
+MF3='Çok':'trimf',[16 33 50]
+MF4='Yüksek':'trapmf',[40 75 100 100]
+
+[Input2]
+Name='Fay Hattına Uzaklık (KM)'
+Range=[0 1110]
+NumMFs=5
+MF1='Çok Az':'trimf',[-50 0 50]
+MF2='Az':'trimf',[40 95 150]
+MF3='Orta':'trimf',[100 200 300]
+MF4='Çok':'trimf',[250 400 550]
+MF5='Yüksek':'trapmf',[500 800 1100 1100]
+
+[Input3]
+Name='Hasar Durumu '
+Range=[0 100]
+NumMFs=3
+MF1='Hasarsız':'trimf',[0 0 30]
+MF2='Hafif':'trimf',[20 40 60]
+MF3='Ağır':'trapmf',[52.5 72.5 100 100]
+
+[Input4]
+Name='Zemin Sıvılaşması'
+Range=[0 20]
+NumMFs=3
+MF1='düsük':'trimf',[0 0 4.93336886993603]
+MF2='yuksek':'trimf',[4.55117270788913 8.05117270788912 15.4904051172708]
+MF3='cokyuksek':'trimf',[14.2564 20 20]
+
+[Output1]
+Name='Güvenlik Durumu (Range=[0 100]
+NumMFs=3
+MF1='Az':'trimf',[-30 0 30]
+MF2='Orta':'trimf',[19.3254817987152 40 67.6124197002141]
+MF3='Çok':'trapmf',[50 80 100 100]
+
+[Rules]
